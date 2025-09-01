@@ -31,3 +31,13 @@
   cursor:pointer
 
 }
+.studentdetails{
+  display:inline-block;
+  border-radius:20px;
+  border-color:black;
+  padding:20px;
+  border:1px solid red;
+  margin:auto;
+  border: bottom 3px;
+
+}
