@@ -41,3 +41,18 @@
   border: bottom 3px;
 
 }
+
+.Restricted{
+  font-size: 20px;
+  padding:20px;
+  color:white;
+  background-color: Red;
+}
+
+
+.allowed{
+  font-size: 20px;
+  padding:20px;
+  color:white;
+  background-color: green;
+}

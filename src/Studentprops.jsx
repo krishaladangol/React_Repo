@@ -8,13 +8,16 @@ function Student(props){
         </div>
     );
 }
+
+// propTypes->a mechanism to ensure that the passed value is of the correct datatype.
+
 Student.propTypes={
     name:PropTypes.string,
     age:PropTypes.number,
     Isstudent:PropTypes.boolean,
 
 }
-// defaultprops
+// defaultprops->when value is not passed through app.jsx(main component)
 Student.defaultProps={
     name:"guest",
     age:0,

@@ -5,6 +5,8 @@ import Card from './Card.jsx'
 import Button from './Button/Button.jsx'
 import Buttons from './inlinecss.jsx'
 import Student from './Studentprops.jsx'
+import Employee from './ConditionalRendering.jsx'
+import Age from './Age_rendering.jsx'
 function App() {
   return (
     <>template tag
@@ -20,6 +22,9 @@ function App() {
       <Student name="saki" age={21} Isstudent={false}/>
       <Student />
 
+    <Employee isloggedin={true} username="Jimmy"/>
+    <Age number={21}/>
+    <Age />
    </>
 
   );
