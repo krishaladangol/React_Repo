@@ -7,6 +7,8 @@ import Buttons from './inlinecss.jsx'
 import Student from './Studentprops.jsx'
 import Employee from './ConditionalRendering.jsx'
 import Age from './Age_rendering.jsx'
+import Rendering from './Conditional_Rendering.jsx'
+import Rendering_list from './Rendering_list.jsx'
 function App() {
   return (
     <>template tag
@@ -25,6 +27,8 @@ function App() {
     <Employee isloggedin={true} username="Jimmy"/>
     <Age number={21}/>
     <Age />
+    <Rendering name="krishala" isloggedin={true}/>
+    <Rendering_list/>
    </>
 
   );
