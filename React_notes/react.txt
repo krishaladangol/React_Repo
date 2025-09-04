@@ -1,0 +1,191 @@
+steps to be followed for react:
+export the component with the function:
+		export default function Profile() {
+return the html code:
+		return <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />;
+					OR,
+
+		return (
+  		<div>
+   			 <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+  		</div>
+		);
+
+
+
+General Rule of Thumb
+
+If the component is only used inside one component, keep it as a helper (don’t export).
+
+If the component is reused in multiple places, put it in its own file or export it alongside the main one.
+
+
+What does <Profile /> mean in React?
+
+At first glance, <Profile /> looks like an HTML tag, but it’s not an HTML element.
+It’s JSX syntax that tells React:
+👉 “Render the Profile component here.”
+
+
+3. JSX Rules
+
+<Profile /> → must start with a capital letter.
+
+Lowercase like <div> or <span> → React treats it as a normal HTML tag.
+
+Uppercase like <Profile> → React looks for a component function called Profile.
+
+
+
+2. A component must return a single thing(return gara we need to wrap in container such as div and section)
+
+Every React component is a function. Functions in JavaScript can return only one value.
+
+<div>...</div> → one value
+
+<section>...</section> → one value
+
+<>...</> → one value (Fragment)
+
+So React forces you to wrap multiple JSX elements into one parent, so the component always returns a single value.
+
+
+
+
+Create a React Project
+
+npm create vite@latest
+# Enter project name, choose React, JavaScript or TypeScript
+cd your-project
+npm install
+npm run dev
+
+my-react-app/
+ ├─ public/          → static files (index.html, images)
+ ├─ src/
+ │   ├─ components/  → reusable components
+ │   ├─ pages/       → larger components/pages
+ │   ├─ App.jsx       → main app component
+ │   ├─ main.jsx      → app entry point
+ │   ├─ assets/      → images, styles
+ └─ package.json
+
+
+
+Card component:pictures,title and decription
+
+
+
+1. What are CSS Modules
+
+CSS Modules are a way to write CSS such that styles are scoped to a specific component.
+
+Each CSS class or ID you define in a module only applies to the component that imports it, avoiding conflicts with other styles.
+
+
+
+external:className through style garne
+module:folder create
+		:folder->filename.module.css create
+		:jsx file ->import module.cssfile
+Inline:jsx fie->css file create using style
+
+
+props:read-only properties that are shared between components.A parent component can send data to a child component.
+<component key=value/>
+If the value is a string literal then pass the value in ""
+else if the value is a number literal then pass the value in {}
+else if the value is a  boolean then pass the value as ternary condition(?:)
+
+props(propType):a mechanism to ensure that the passed value is of the correct datatype.
+eg:
+age:PropTypes.number
+
+
+
+conditional rendering: allows us to control what gets rendred in your application based on condition*show,hide or change the component)
+
+Rendering Lists:
+
+
+
+map methods->used for rendering the array in listed form 
+ 
+
+Perfect! Let’s go step by step and clearly see the difference between filter(), map(), and forEach() in JavaScript — all three are commonly used in React too.
+
+1️⃣ filter()
+
+Purpose: To select certain elements from an array based on a condition.
+
+Returns: A new array containing only the elements that pass the test.
+
+Does NOT modify the original array.
+
+Example:
+
+const numbers = [1, 2, 3, 4, 5];
+const evenNumbers = numbers.filter(n => n % 2 === 0);
+console.log(evenNumbers); // [2, 4]
+
+
+In React, we often use filter() to display a subset of items, e.g., fruits below a calorie threshold.
+
+2️⃣ map()
+
+Purpose: To transform each element of an array into something else.
+
+Returns: A new array of the same length as the original.
+
+Does NOT modify the original array.
+
+Example:
+
+const numbers = [1, 2, 3];
+const squares = numbers.map(n => n * n);
+console.log(squares); // [1, 4, 9]
+
+
+In React, map() is commonly used to render JSX lists:
+
+const fruits = ['apple', 'banana', 'grapes'];
+const listItems = fruits.map(fruit => <li key={fruit}>{fruit}</li>);
+
+
+Each element is transformed into a React <li> element.
+
+3️⃣ forEach()
+
+Purpose: To perform an action for each element.
+
+Returns: undefined (it does NOT return a new array).
+
+Used for side effects (e.g., logging, updating a variable).
+
+Example:
+
+const numbers = [1, 2, 3];
+numbers.forEach(n => console.log(n * 2));
+// Output: 2, 4, 6 (but no new array is returned)
+
+
+In React, forEach() is rarely used for rendering, because it doesn’t return anything. We usually prefer map().
+
+Example combining filter() + map() in React
+const fruits = [
+  { name: 'apple', calorie: 30 },
+  { name: 'banana', calorie: 60 },
+  { name: 'grapes', calorie: 20 }
+];
+
+// Fruits above 20 calories
+const above20 = fruits
+  .filter(f => f.calorie > 20)  // filter
+  .map(f => <li key={f.name}>{f.name}: {f.calorie}</li>); // map
+
+return <ol>{above20}</ol>;
+
+
+filter() selects only certain fruits.
+
+map() transforms them into <li> elements.
