@@ -9,6 +9,8 @@ import Employee from './ConditionalRendering.jsx'
 import Age from './Age_rendering.jsx'
 import Rendering from './Conditional_Rendering.jsx'
 import Rendering_list from './Rendering_list.jsx'
+import List from './RenderingList2.jsx'
+import CalorieCheck from './Conditionalrendeing_filtering_list.jsx'
 function App() {
   return (
     <>template tag
@@ -29,6 +31,8 @@ function App() {
     <Age />
     <Rendering name="krishala" isloggedin={true}/>
     <Rendering_list/>
+    <List/>
+    <CalorieCheck/>
    </>
 
   );
